@@ -1,4 +1,4 @@
-package jianzhioffer
+package array
 
 import (
 	"fmt"

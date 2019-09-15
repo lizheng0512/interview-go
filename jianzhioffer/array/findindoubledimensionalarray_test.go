@@ -1,4 +1,4 @@
-package jianzhioffer
+package array
 
 import "testing"
 
@@ -10,5 +10,5 @@ func TestFind(t *testing.T) {
 		{4, 5, 6, 7, 8},
 		{5, 6, 7, 8, 9},
 	}
-	find(arr, 6)
+	findInDoubleDimensionalArray(arr, 6)
 }

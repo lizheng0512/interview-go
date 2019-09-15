@@ -1,4 +1,4 @@
-package jianzhioffer
+package array
 
 import (
 	"fmt"
@@ -8,7 +8,7 @@ import (
 // 思路：从右上角/左下角开始找，如果该元素小于要查找的元素，则排除掉这一行，要查找的元素可能出现在下面的所有行，
 // 如果大于要查找的元素，则排除这一列，要查找的元素可能出现在左侧的所有列，排除掉后，继续按照此规则在剩余的二维数组中查找，
 // 直到找到该元素，或者遍历完毕
-func find(arr [][]int, goal int) {
+func findInDoubleDimensionalArray(arr [][]int, goal int) {
 	if len(arr) <= 0 || len(arr[0]) <= 0 {
 		panic("请输入至少包含一个元素的二维数组")
 	}
@@ -28,8 +28,4 @@ func find(arr [][]int, goal int) {
 	if !found {
 		fmt.Printf("没有找到数字%d\n", goal)
 	}
-}
-
-func main() {
-
 }
