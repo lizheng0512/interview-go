@@ -16,6 +16,13 @@ type element struct {
 	value      interface{}
 }
 
+func (e *element) String() string {
+	if e != nil {
+		return fmt.Sprintf("%v", e.value)
+	}
+	return ""
+}
+
 type Iterator struct {
 	list  *List
 	elem  *element

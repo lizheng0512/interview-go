@@ -7,17 +7,17 @@ import "testing"
 //    1     2
 //   / \   / \
 //  3   4 5   6
-var tree = &binaryTreeNode{
-	value: 0,
-	left: &binaryTreeNode{
-		value: 1,
-		left:  &binaryTreeNode{value: 3},
-		right: &binaryTreeNode{value: 4},
+var tree = &BinaryTreeNode{
+	Value: 0,
+	Left: &BinaryTreeNode{
+		Value: 1,
+		Left:  &BinaryTreeNode{Value: 3},
+		Right: &BinaryTreeNode{Value: 4},
 	},
-	right: &binaryTreeNode{
-		value: 2,
-		left:  &binaryTreeNode{value: 5},
-		right: &binaryTreeNode{value: 6},
+	Right: &BinaryTreeNode{
+		Value: 2,
+		Left:  &BinaryTreeNode{Value: 5},
+		Right: &BinaryTreeNode{Value: 6},
 	},
 }
 

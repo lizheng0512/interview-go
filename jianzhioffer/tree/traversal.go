@@ -2,38 +2,38 @@ package tree
 
 import "fmt"
 
-type binaryTreeNode struct {
-	value               interface{}
-	parent, left, right *binaryTreeNode
+type BinaryTreeNode struct {
+	Value               interface{}
+	Parent, Left, Right *BinaryTreeNode
 }
 
-func (n *binaryTreeNode) String() string {
+func (n *BinaryTreeNode) String() string {
 	if n == nil {
 		return ""
 	}
-	return fmt.Sprintf("%v", n.value)
+	return fmt.Sprintf("%v", n.Value)
 }
 
-func PreOrderTraversal(root *binaryTreeNode) {
+func PreOrderTraversal(root *BinaryTreeNode) {
 	if root != nil {
 		fmt.Printf("%s ", root)
-		PreOrderTraversal(root.left)
-		PreOrderTraversal(root.right)
+		PreOrderTraversal(root.Left)
+		PreOrderTraversal(root.Right)
 	}
 }
 
-func InOrderTraversal(root *binaryTreeNode) {
+func InOrderTraversal(root *BinaryTreeNode) {
 	if root != nil {
-		InOrderTraversal(root.left)
+		InOrderTraversal(root.Left)
 		fmt.Printf("%s ", root)
-		InOrderTraversal(root.right)
+		InOrderTraversal(root.Right)
 	}
 }
 
-func PostOrderTraversal(root *binaryTreeNode) {
+func PostOrderTraversal(root *BinaryTreeNode) {
 	if root != nil {
-		PostOrderTraversal(root.left)
-		PostOrderTraversal(root.right)
+		PostOrderTraversal(root.Left)
+		PostOrderTraversal(root.Right)
 		fmt.Printf("%s ", root)
 	}
 }
