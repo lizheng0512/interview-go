@@ -5,7 +5,7 @@ import (
 	"strings"
 )
 
-// 题目36: 复制一个复杂链表, 复杂链表的节点结构如下, 除了一个指向下一个节点的指针还有一个指向链表中任意节点的指针
+// 题目35: 复制一个复杂链表, 复杂链表的节点结构如下, 除了一个指向下一个节点的指针还有一个指向链表中任意节点的指针
 type ComplexListNode struct {
 	Value         interface{}
 	Next, Sibling *ComplexListNode
