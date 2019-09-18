@@ -32,3 +32,13 @@ func TestInOrderTraversal(t *testing.T) {
 func TestPostOrderTraversal(t *testing.T) {
 	PostOrderTraversal(tree)
 }
+
+func TestWidthFirstTraversal(t *testing.T) {
+	WidthFirstTraversal(tree)
+	WidthFirstTraversal(nil)
+	WidthFirstTraversal(&BinaryTreeNode{Value: 1})
+}
+
+func TestWidthFirstTraversal2(t *testing.T) {
+	WidthFirstTraversal2(tree)
+}
