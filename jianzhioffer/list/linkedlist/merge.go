@@ -1,5 +1,7 @@
 package linkedlist
 
+import "fmt"
+
 type intElement struct {
 	value int
 	next  *intElement
@@ -7,6 +9,7 @@ type intElement struct {
 
 // 题目25: 将两个递增排序链表合并为一个递增排序链表
 func Merge(head1 *intElement, head2 *intElement) *intElement {
+	fmt.Println("111")
 	if head1 == nil {
 		return head2
 	} else if head2 == nil {

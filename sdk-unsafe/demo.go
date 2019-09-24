@@ -20,6 +20,7 @@ func main() {
 	// unsafe.Pointer是通用指针类型，可以实现指针类型的转换
 	// 利用unsafe.pointer的方式实现修改数组中的元素
 	// 取得数组开始的地址, 转换成uintptr是为了参与指针运算
+	//parr := uintptr(unsafe.Pointer(&arr))
 	parr := uintptr(unsafe.Pointer(&arr))
 	// 要修改数组中的第三个元素, 计算第三个元素指针
 	p := (*uint)(unsafe.Pointer(parr + 2*unsafe.Sizeof(arr[0])))

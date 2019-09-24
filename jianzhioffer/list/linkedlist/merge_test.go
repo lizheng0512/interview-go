@@ -14,9 +14,10 @@ func TestMerge(t *testing.T) {
 	n6 := &intElement{value: 6}
 	n7 := &intElement{value: 7}
 	n1.next = n3
-	n3.next = n5
-	n2.next = n4
-	n4.next = n6
+	n3.next = n4
+	n4.next = n5
+	//n2.next = n4
+	//n4.next = n6
 	n6.next = n7
 	mergedHead := Merge(n1, n2)
 	for mergedHead != nil {
