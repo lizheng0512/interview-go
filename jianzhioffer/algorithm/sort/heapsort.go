@@ -44,7 +44,7 @@ func heapAdjust(arr []int, parent, length int) {
 
 		// 选取孩子节点的左孩子节点, 继续向下前进
 		parent = child
-		child = 2*child + 1
+		child = 2*parent + 1
 	}
 	arr[parent] = temp
 }

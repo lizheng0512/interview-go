@@ -2,6 +2,7 @@ package string
 
 import "fmt"
 
+// n为数字的长度，输出1~n位的所有数字
 func PrintOneToNDigitNumber(n int) {
 	if n <= 0 {
 		return

@@ -2,13 +2,16 @@ package main
 
 import (
 	"fmt"
+	"github.com/DeanThompson/ginpprof"
 	"github.com/gin-gonic/gin"
 	"net/http"
+	//_ "net/http/pprof"
 )
 
 func main() {
 	engine := gin.Default()
 	group := engine.Group("auth", func(c *gin.Context) {
+		c.FormFile()
 		fmt.Println("auth")
 		param, _ := c.GetQuery("username")
 		if param != "lizheng" {
@@ -27,5 +30,6 @@ func main() {
 			//time.Sleep(10e9)
 			fmt.Println("3")
 		})
+	ginpprof.Wrap(engine)
 	fmt.Println("gin服务启动失败！", engine.Run("0.0.0.0:8081"))
 }
