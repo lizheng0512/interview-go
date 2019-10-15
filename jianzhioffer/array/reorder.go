@@ -1,6 +1,6 @@
 package array
 
-// 题目: 调整数组顺序, 一分为二使满足f的在数组后面, 不满足f的在数组前面
+// 题目21: 调整数组顺序, 一分为二使满足f的在数组后面, 不满足f的在数组前面
 func Reorder(arr []int, f func(int) bool) {
 	if len(arr) <= 1 {
 		return

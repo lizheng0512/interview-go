@@ -1,6 +1,7 @@
 package tree
 
 import (
+	"container/list"
 	"fmt"
 	"interview-go/jianzhioffer/stack"
 )
@@ -25,6 +26,25 @@ func PreOrderTraversal(root *BinaryTreeNode) {
 	}
 }
 
+func PreOrderTraversalIteration(root *BinaryTreeNode) {
+	s := stack.New()
+	if root != nil {
+		s.Push(root)
+	}
+	for !s.Empty() {
+		if value, ok := s.Pop(); ok {
+			node := value.(*BinaryTreeNode)
+			fmt.Printf("%d ", node.Value)
+			if node.Right != nil {
+				s.Push(node.Right)
+			}
+			if node.Left != nil {
+				s.Push(node.Left)
+			}
+		}
+	}
+}
+
 func InOrderTraversal(root *BinaryTreeNode) {
 	if root != nil {
 		InOrderTraversal(root.Left)
@@ -33,11 +53,50 @@ func InOrderTraversal(root *BinaryTreeNode) {
 	}
 }
 
+func InOrderTraversalIteration(root *BinaryTreeNode) {
+	s := stack.New()
+	cur := root
+	for cur != nil || !s.Empty() {
+		for cur != nil {
+			s.Push(cur)
+			cur = cur.Left
+		}
+		if value, ok := s.Pop(); ok {
+			node := value.(*BinaryTreeNode)
+			fmt.Printf("%v ", node.Value)
+			cur = node.Right
+		}
+	}
+}
+
 func PostOrderTraversal(root *BinaryTreeNode) {
 	if root != nil {
 		PostOrderTraversal(root.Left)
 		PostOrderTraversal(root.Right)
 		fmt.Printf("%s ", root)
+	}
+}
+
+func PostOrderTraversalIteration(root *BinaryTreeNode) {
+	s := stack.New()
+	arr := make([]interface{}, 0)
+	if root != nil {
+		s.Push(root)
+	}
+	for !s.Empty() {
+		if value, ok := s.Pop(); ok {
+			node := value.(*BinaryTreeNode)
+			arr = append(arr, node.Value)
+			if node.Left != nil {
+				s.Push(node.Left)
+			}
+			if node.Right != nil {
+				s.Push(node.Right)
+			}
+		}
+	}
+	for i := len(arr) - 1; i >= 0; i-- {
+		fmt.Printf("%v ", arr[i])
 	}
 }
 

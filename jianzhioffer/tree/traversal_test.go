@@ -1,6 +1,9 @@
 package tree
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 //       0
 //     /   \
@@ -23,14 +26,20 @@ var tree = &BinaryTreeNode{
 
 func TestPreOrderTraversal(t *testing.T) {
 	PreOrderTraversal(tree)
+	fmt.Println()
+	PreOrderTraversalIteration(tree)
 }
 
 func TestInOrderTraversal(t *testing.T) {
 	InOrderTraversal(tree)
+	fmt.Println()
+	InOrderTraversalIteration(tree)
 }
 
 func TestPostOrderTraversal(t *testing.T) {
 	PostOrderTraversal(tree)
+	fmt.Println()
+	PostOrderTraversalIteration(tree)
 }
 
 func TestWidthFirstTraversal(t *testing.T) {
